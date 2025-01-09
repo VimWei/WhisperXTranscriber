@@ -40,20 +40,18 @@
 * CPU Only
     conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 cpuonly -c pytorch
 
-3. 安装 whisperx 及相关库
+3. 安装 whisperx 及相关库（适配CPU Only）
 
     pip install -r requirements.txt
-
-    * whisperx
-    * torch==2.0.0
-    * numpy=1.24.3
 
 4. 配置 config.yaml 及 .env 文件
 
 请在 .env 文件中设置 diarization 所需的 token 及 proxy。
 
+```bash
 HF_AUTH_TOKEN=*your_token*
 HTTP_PROXY=*your_proxy*
+```
 
 而且要在 HuggingFace 网站上手动接受相关模型的使用授权条款：
 
