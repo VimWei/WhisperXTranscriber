@@ -53,23 +53,24 @@
 请在 .env 文件中设置 diarization 所需的 token 及 proxy。
 
 HF_AUTH_TOKEN=*your_token*
-HTTP_PROXY=*your_proxy* 
+HTTP_PROXY=*your_proxy*
 
 而且要在 HuggingFace 网站上手动接受相关模型的使用授权条款：
 
-访问 https://huggingface.co/pyannote/segmentation-3.0
-访问 https://huggingface.co/pyannote/speaker-diarization-3.0
-
-在每个页面上：
-（1）登录你的 HuggingFace 账号（使用与 token 相关联的账号）
-（2）点击 "Accept" 或 "Access repository" 按钮接受使用条款
-（3）同意相关的许可条款
+* 访问 https://huggingface.co/pyannote/segmentation-3.0
+* 访问 https://huggingface.co/pyannote/speaker-diarization-3.0
+* 在每个页面上：
+    - 登录你的 HuggingFace 账号（使用与 token 相关联的账号）
+    - 点击 "Accept" 或 "Access repository" 按钮接受使用条款
+    - 同意相关的许可条款
 
 5. 运行程序
 
+可以使用命令：
 ```bash
-python main.py
+    python WhisperXTranscriber.py
 ```
+也可以使用快捷键 “WhisperXConda.lnk” （需要根据项目位置先修订其属性值）
 
 ## 核心类说明
 
