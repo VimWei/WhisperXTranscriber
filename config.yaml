@@ -1,3 +1,7 @@
+# Global Configuration
+global:
+  proxy: null  # 将从 secrets.yaml 加载
+
 # Input Configuration
 input:
   directory: "data"
@@ -34,10 +38,9 @@ model:
   # Diarization settings
   diarization:
     enabled: true
-    auth_token: !env HF_AUTH_TOKEN
+    auth_token: null  # 将从 secrets.yaml 加载
     min_speakers: 1
     max_speakers: 2
-    proxy: !env HTTP_PROXY
 
 # Transcription Parameters
 transcription:

@@ -1,7 +1,7 @@
 # Data files
 data/
 models/
-.env
+secrets.yaml
 
 # System files
 *.swp

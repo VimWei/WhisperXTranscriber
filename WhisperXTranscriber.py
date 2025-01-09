@@ -12,21 +12,29 @@ from speechbrain.inference import SpeakerRecognition
 class WhisperXTranscriber:
     # 1. 配置系统
     def __init__(self, config_path: str = "config.yaml"):
-        # 1. 首先加载配置文件
+        # 加载主配置
         self.config = self.load_config(config_path)
         
-        # 2. 然后设置代理环境变量
-        if 'proxy' in self.config.get('model', {}).get('diarization', {}):
-            proxy = self.config['model']['diarization']['proxy']
-            # 设置各种可能的代理环境变量
-            os.environ['HTTP_PROXY'] = proxy
-            os.environ['HTTPS_PROXY'] = proxy
-            os.environ['http_proxy'] = proxy
-            os.environ['https_proxy'] = proxy
-            # 为 Python requests 设置代理
-            os.environ['REQUESTS_CA_BUNDLE'] = ''  # 禁用 SSL 验证
-            print(f"Proxy set to: {proxy}")
-        
+        # 加载敏感配置
+        try:
+            with open("secrets.yaml", 'r', encoding='utf-8') as f:
+                secrets = yaml.safe_load(f)
+                # 更新配置
+                if 'auth_token' in secrets:
+                    self.config['model']['diarization']['auth_token'] = secrets['auth_token']
+                if 'proxy' in secrets:
+                    self.config['global']['proxy'] = secrets['proxy']
+                
+                # 如果有代理设置，立即应用
+                if proxy := self.config['global'].get('proxy'):
+                    for var in ['HTTP_PROXY', 'HTTPS_PROXY', 'http_proxy', 'https_proxy']:
+                        os.environ[var] = proxy
+                    os.environ['REQUESTS_CA_BUNDLE'] = ''
+                    print(f"Proxy set to: {proxy}")
+                    
+        except FileNotFoundError:
+            print("Warning: secrets.yaml not found")
+
     @staticmethod
     def load_config(config_path: str) -> dict:
         """配置文件加载"""

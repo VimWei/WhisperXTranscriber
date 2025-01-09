@@ -44,13 +44,13 @@
 
     pip install -r requirements.txt
 
-4. 配置 config.yaml 及 .env 文件
+4. 配置 config.yaml 及 secrets.yaml 文件
 
-请在 .env 文件中设置 diarization 所需的 token 及 proxy。
+请在 secrets.yaml 文件中设置 diarization 所需的 token 及 proxy。
 
 ```bash
-HF_AUTH_TOKEN=*your_token*
-HTTP_PROXY=*your_proxy*
+auth_token: "your_token"
+proxy: "your_proxy"
 ```
 
 而且要在 HuggingFace 网站上手动接受相关模型的使用授权条款：
