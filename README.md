@@ -48,9 +48,14 @@
     * torch==2.0.0
     * numpy=1.24.3
 
-4. 配置 config.yaml
+4. 配置 config.yaml 及 .env 文件
 
-其中 diarization 需要设置 token，且要在 HuggingFace 网站上手动接受这两个模型的使用条款：
+请在 .env 文件中设置 diarization 所需的 token 及 proxy。
+
+HF_AUTH_TOKEN=*your_token*
+HTTP_PROXY=*your_proxy* 
+
+而且要在 HuggingFace 网站上手动接受相关模型的使用授权条款：
 
 访问 https://huggingface.co/pyannote/segmentation-3.0
 访问 https://huggingface.co/pyannote/speaker-diarization-3.0
