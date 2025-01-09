@@ -70,3 +70,6 @@
 ```
 也可以使用快捷键 “WhisperXConda.lnk” （需要根据项目位置先修订其属性值）
 
+## ref
+
+https://github.com/VimWei/WhisperTranscriber
