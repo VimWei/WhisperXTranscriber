@@ -1,0 +1,11 @@
+# Data files
+data/
+models/
+.env
+
+# System files
+*.swp
+
+# Python
+__pycache__/
+*.pyc
