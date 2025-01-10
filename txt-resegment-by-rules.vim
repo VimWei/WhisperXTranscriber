@@ -1,7 +1,8 @@
 normal ggVGJ
+" %s/—/ /ge
+" %s/-/ /ge
 %s/  / /ge
-%s/—/, /ge
-%s/-/, /ge
+%s/  / /ge
 %s/\. /\.\r/ge
 %s/\! /\!\r/ge
 %s/? /\?\r/ge
