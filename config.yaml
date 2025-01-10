@@ -37,7 +37,7 @@ model:
 
   # Diarization settings
   diarization:
-    enabled: true
+    enabled: false
     auth_token: null  # 将从 secrets.yaml 加载
     min_speakers: 1
     max_speakers: 2
