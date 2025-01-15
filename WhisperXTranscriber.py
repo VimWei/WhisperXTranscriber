@@ -4,7 +4,7 @@ import yaml
 import json
 from pathlib import Path
 import whisperx
-from typing import List, Optional
+from typing import List
 
 # 使用新的 inference 接口
 from speechbrain.inference import SpeakerRecognition
@@ -70,7 +70,7 @@ class WhisperXTranscriber:
             config['name'],
             device=config['device'],
             compute_type=config['compute_type'],
-            language=self.config['model']['aligner']['language']
+            language=config['language']
         )
 
     def load_alignment_model(self, language: str):
@@ -110,7 +110,7 @@ class WhisperXTranscriber:
         result = model.transcribe(
             audio,
             batch_size=self.config['model']['whisper']['batch_size'],
-            language=self.config['model']['aligner']['language']
+            language=self.config['model']['whisper']['language']
         )
         
         print("Cleaning up Whisper model...")
