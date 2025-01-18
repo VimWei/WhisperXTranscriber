@@ -121,7 +121,7 @@ class WhisperXTranscriber:
         if self.config['model']['aligner']['enabled']:
             print("Loading alignment model...")
             model_a, metadata = self.load_alignment_model(
-                language=self.config['model']['aligner']['language']
+                language=self.config['model']['whisper']['language']
             )
             if model_a is not None:
                 print("Aligning transcription...")
