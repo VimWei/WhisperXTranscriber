@@ -37,7 +37,7 @@
 ```
 * CPU Only
 ```bash
-    # 安装符合whisperx 3.3.4要求的PyTorch版本（必须CPU版）
+    # 安装符合whisperx 3.3.4要求的PyTorch版本
     conda install pytorch==2.5.1 torchaudio==2.5.1 cpuonly -c pytorch
 ```
 
