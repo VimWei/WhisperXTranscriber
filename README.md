@@ -37,12 +37,14 @@
 ```
 * CPU Only
 ```bash
-    conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 cpuonly -c pytorch
+    # 安装符合whisperx 3.3.4要求的PyTorch版本（必须CPU版）
+    conda install pytorch==2.5.1 torchaudio==2.5.1 cpuonly -c pytorch
 ```
 
 3. 安装 whisperx 及相关库（适配CPU Only）
 ```bash
-    pip install -r requirements.txt
+    pip install "whisperx==3.3.4" --upgrade-strategy only-if-needed --no-cache-dir --force-reinstall --no-deps
+    pip install "nltk>=3.9.1" "pandas>=2.2.3" "pyannote-audio>=3.3.2" "transformers>=4.48.0" "ctranslate2<4.5.0" "faster-whisper>=1.1.1" "numpy>=2.0.2"
 ```
 
 4. 配置 config.yaml 及 secrets.yaml 文件

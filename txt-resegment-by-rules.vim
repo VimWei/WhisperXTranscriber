@@ -1,6 +1,9 @@
 normal ggVGJ
 " %s/—/ /ge
 " %s/-/ /ge
+%s/um //ge
+%s/um, //ge
+%s/uh //ge
 %s/  / /ge
 %s/  / /ge
 %s/\. /\.\r/ge
